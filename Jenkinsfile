@@ -13,5 +13,13 @@ pipeline {
         build 'rundeck1'
       }
     }
+    stage('QA') {
+      steps {
+        sh '''curl -s http://130.211.220.3:8080/student/ |grep 'Student ame'
+if [ $? -ne 0 ]; then 
+exit 1
+fi'''
+      }
+    }
   }
 }
