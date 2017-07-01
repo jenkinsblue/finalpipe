@@ -21,5 +21,10 @@ exit 1
 fi'''
       }
     }
+    stage('Approval') {
+      steps {
+        input 'Do you want to deploy to PROD'
+      }
+    }
   }
 }
