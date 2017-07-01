@@ -23,8 +23,8 @@ fi'''
     }
     stage('Approval') {
       steps {
-        input 'Do you want to deploy to PROD'
         emailext(subject: 'Need Approval', body: '$BUILD_URL', to: 'admin@localhost')
+        input 'Do you want to deploy to PROD'
       }
     }
   }
