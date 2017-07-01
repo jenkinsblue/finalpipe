@@ -27,5 +27,10 @@ fi'''
         input 'Do you want to deploy to PROD'
       }
     }
+    stage('PROD') {
+      steps {
+        build 'rundeck-prod'
+      }
+    }
   }
 }
